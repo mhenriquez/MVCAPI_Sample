@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ITD.Checkin.Models.Appointment>
+
+@section Scripts {}
+
+@{
+    <p>Check-in List for @Model.ElementAtOrDefault(0).scheduled_datetime.ToLongDateString()</p>
+    <hr />
+
+    int x = 0;
+    for (int i = 0; i < Model.Count(); i++)
+    {
+        var id = Model.ElementAtOrDefault(i).id;
+        var nid = Model.ElementAtOrDefault(i).nid;
+        var iso = Model.ElementAtOrDefault(i).iso;
+
+        var fname = Model.ElementAtOrDefault(i).first_name;
+        var lname = Model.ElementAtOrDefault(i).last_name;
+
+        var hour = Model.ElementAtOrDefault(i).scheduled_datetime.Hour;
+        var minute = Model.ElementAtOrDefault(i).scheduled_datetime.Minute;
+        var time = Model.ElementAtOrDefault(i).scheduled_datetime.ToShortTimeString();
+
+        if (x == hour)
+        {
+            <div id="@nid" class="col-xs-12 col-sm-6 col-md-3 col-lg-2 profile-frm">
+                <div class="col-xs-6 col-sm-6 col-md-12 form-group">
+                    <img class="img-responsive profile-img" src="/verify/api/photo?nid=@nid&iso=@iso" alt="Photo Not Available for @fname @lname" height="100" />
+                    @using (Html.BeginForm("Edit", "Index", new { id = id }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.Hidden("timeNow", DateTime.Now.ToString("yyyy-MM-dd HH:mm:00"))
+
+                        <input type="submit" value="CHECK-IN" class="btn btn-sm btn-primary checkin-btn" />
+                    }
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-12">
+                    <p>@Html.ActionLink(fname + " " + lname, "Details", new { id = id })</p>
+                    <p class="checkin-time">@time</p>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-xs-12">
+                <h3 class="time-header">@time</h3>
+                <hr />
+            </div>
+
+            <div id="@nid" class="col-xs-12 col-sm-6 col-md-3 col-lg-2 profile-frm">
+                <div class="col-xs-6 col-sm-6 col-md-12 form-group">
+                    <img class="img-responsive profile-img" src="/verify/api/photo?nid=@nid&iso=@iso" alt="Photo Not Available for @fname @lname" height="100" />
+                    @using (Html.BeginForm("Edit", "Index", new { id = id }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.Hidden("timeNow", DateTime.Now.ToString("yyyy-MM-dd HH:mm:00"))
+
+                        <input type="submit" value="CHECK-IN" class="btn btn-sm btn-primary checkin-btn" />
+                    }
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-12">
+                    <p>@Html.ActionLink(fname + " " + lname, "Details", new { id = id })</p>
+                    <p class="checkin-time">@time</p>
+                </div>
+            </div>
+        }
+
+        x = hour;
+    }
+}

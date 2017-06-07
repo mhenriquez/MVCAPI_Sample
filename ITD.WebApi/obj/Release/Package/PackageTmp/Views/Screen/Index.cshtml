@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Exams Screen";
+    Layout = "~/Views/Shared/_ScreenLayout.cshtml";
+}
+
+@section Scripts {
+    <script>
+        $(function () {
+            getExams();
+            setInterval(getExams, 3000000); //<-- 50 min. refresh
+
+            getStats();
+            setInterval(getStats, 120000); //<-- 2 min. refresh
+        });
+
+        function getExams() {
+            //GET: Exams List
+            $.get('@Url.Action("Exams", "Screen")'
+                ).done(function (data) {
+                    $("#divExams").html(data).fadeIn('fast');
+                });
+        }
+
+        function getStats() {
+            //GET: Stat Counts
+            $.get('@Url.Action("Stats", "Screen")'
+                ).done(function (data) {
+                    $("#divStats").html(data).fadeIn('fast');
+                });
+        }
+</script>
+}
+
+<!-- Exam Listing
+================================================== -->
+<div class="carousel-container row">
+    <div id="examCarousel" class="carousel slide" data-ride="carousel">
+        <div id="divExams" class="carousel-inner" role="listbox"></div>
+    </div>
+</div><!-- /.carousel -->
+
+<!-- Stat Counts
+================================================== -->
+<div id="divStats" class="stats-container"></div><!-- /.stats -->

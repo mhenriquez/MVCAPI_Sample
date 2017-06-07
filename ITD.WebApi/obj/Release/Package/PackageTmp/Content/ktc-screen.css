@@ -1,0 +1,99 @@
+﻿/*------------------------
+--------------------------
+Styles for Monitor Layout
+--------------------------
+------------------------*/
+
+body {
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left:15px;
+    padding-right:15px;
+}
+
+
+/*--------------------------
+    "Exams" carousel
+--------------------------*/
+
+.carousel-inner {
+    background-image:url(../Content/test-bg.jpg);
+    background-size:cover;
+    height:530px; /*540 is halfway of 1080 screen*/
+}
+
+.carousel-inner .item p {
+    /*font-size:1.6em;*/
+}
+
+.carousel-inner .item span.text-grey {
+    font-size:1em;
+    color:#777;
+}
+
+.carousel-inner .main-title {
+    font-size:5.3em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #ffd800;
+}
+
+.carousel-inner .operating-day {
+    font-size:2.3em;
+}
+
+.carousel-inner .operating-hrs {
+    font-size:3em;
+}
+
+.carousel-inner .operating-hrs span {
+    font-size:.73em;
+}
+
+.carousel-inner .item {
+    background:none;
+}
+
+.carousel-inner .item .course-num {
+    text-transform:uppercase;
+    font-size:2.3em;
+    color: #ffd800;
+}
+
+.carousel-inner .item .course-title {
+    text-transform:uppercase;
+    font-size:3.3em;
+    color: #ffd800;
+}
+
+.carousel-inner .item .exam-title {
+    font-size:3.3em;
+    font-weight:bold;
+}
+
+.carousel-inner .item .professor {
+    font-size:2.3em;
+}
+
+.carousel-inner .item .test-count {
+    font-size:1.3em;
+}
+
+
+/*--------------------------
+    "Stats" row
+--------------------------*/
+
+.stat-row h4 {
+    font-size:3em;
+}
+
+.stat-row h3 {
+    font-size:1.7em;
+}
+
+.stat-row .stat-count {
+    font-size:11.3em;
+    font-weight:bold;
+}

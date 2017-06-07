@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Student Verifier";
+}
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("The page was succesfully loaded.");
+        });
+    </script>
+    <script>
+        "use strict";
+        var myActionUrl = '@Url.Action("recent","api")';
+        var div = $("#RecentCheckins");
+
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: myActionUrl,
+            data: "", // <--data contains the collection as json
+            success: function (data) {
+                // iterate through data and list each item
+                $.each(data, function (index, item) {
+                    var link = $("<li><a href='Home/Details/" + item.id + "'>" + item.first_name + " " + item.last_name + "</a></li>")
+                    div.fadeIn().append(link);
+                });
+            },
+            error: function(){
+                var strResponse = "<em>Data Error:<br>Try again later.</em>";
+                div.append(strResponse);
+            }
+        });
+    </script>
+}
+
+<div><p>&nbsp;</p></div>
+
+<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+    <p>Recent Check-ins</p>
+    <hr />
+    <ul id="RecentCheckins"></ul>
+    <br /><br />
+</div>
+
+<div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
+    @{Html.RenderPartial("_List");}
+</div>

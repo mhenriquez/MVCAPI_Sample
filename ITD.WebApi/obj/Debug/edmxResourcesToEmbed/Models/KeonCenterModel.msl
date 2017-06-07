@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KeonCenterModelStoreContainer" CdmEntityContainer="KeonCenterContext">
+    <EntitySetMapping Name="CurrentTests">
+      <EntityTypeMapping TypeName="KeonCenterModel.CurrentTests">
+        <MappingFragment StoreEntitySet="vCurrent_Tests_ByCourse">
+          <ScalarProperty Name="TestsTaken" ColumnName="Tests_Taken" />
+          <ScalarProperty Name="StudentsEnrolled" ColumnName="Students_Enrolled" />
+          <ScalarProperty Name="TestCloses" ColumnName="Close_Date_Time" />
+          <ScalarProperty Name="TestOpens" ColumnName="Open_Date_Time" />
+          <ScalarProperty Name="TestID" ColumnName="Test_ID" />
+          <ScalarProperty Name="CourseTest" ColumnName="Test_Name" />
+          <ScalarProperty Name="Professor" ColumnName="Professor" />
+          <ScalarProperty Name="CourseTitle" ColumnName="Title" />
+          <ScalarProperty Name="CourseNumber" ColumnName="Course_Number" />
+          <ScalarProperty Name="CoursePrefix" ColumnName="Course_Prefix" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

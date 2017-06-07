@@ -1,0 +1,84 @@
+﻿@model IEnumerable<ITD.WebApi.Models.CurrentTests>
+
+<!-- Items -->
+<div class="item active">
+    <div class="carousel-caption">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="main-title">KEON TESTING CENTER</h1>
+                <p>&nbsp;</p>
+                <p class="operating-day"><span>@DateTime.Now.ToLongDateString()</span></p>
+
+                @if (DateTime.Now.DayOfWeek != DayOfWeek.Friday || DateTime.Now.DayOfWeek != DayOfWeek.Saturday)
+                {
+                    <p class="operating-hrs">Hours: @ViewData["StartTimeWeekday"] <span>to</span> @ViewData["EndTimeWeekday"]</p>
+                }
+                else if (DateTime.Now.DayOfWeek == DayOfWeek.Friday)
+                {
+                    <p class="operating-hrs">Hours: @ViewData["StartTimeFriday"] <span>to</span> @ViewData["EndTimeFriday"]</p>
+                }
+                else if (DateTime.Now.DayOfWeek == DayOfWeek.Saturday)
+                {
+                    <p class="operating-hrs">Hours: @ViewData["EndTimeSaturday"]<span>to</span> @ViewData["EndTimeSaturday"]</p>
+                }
+
+                <p>&nbsp;</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{
+    int testItem = 0;
+    foreach (var item in Model)
+    {
+        <div class="item">
+            <div class="carousel-caption">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p class="course-num">
+                            @Html.DisplayFor(modelItem => item.CoursePrefix)
+                            @Html.DisplayFor(modelItem => item.CourseNumber)
+                        </p>
+
+                        <p class="course-title">
+                            @Html.DisplayFor(modelItem => item.CourseTitle)
+                        </p>
+
+                        <p class="exam-title">
+                            @Html.DisplayFor(modelItem => item.CourseTest)
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 text-left">
+                        <br />
+                        <p><strong><span class="text-grey">Closes: </span></strong> @Html.DisplayFor(modelItem => item.TestCloses)</p>
+                        <p><strong><span class="text-grey">Completed: </span></strong> @Html.DisplayFor(modelItem => item.TestsTaken) of @Html.DisplayFor(modelItem => item.StudentsEnrolled)</p>
+                    </div>
+
+                    <div class="col-lg-6 text-right">
+                        <p class="professor">@Html.DisplayFor(modelItem => item.Professor)</p>
+                        <p class="course-section">Sections @item.strSections</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 test-count">
+                        @{testItem += 1;}
+                        @testItem &nbsp; <em>of</em> &nbsp; @Model.Count()
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    }
+}
+
+<!-- Left and right controls -->
+<a class="left carousel-control" href="#examCarousel" role="button" data-slide="prev">
+    <span class="sr-only"></span>
+</a>
+
+<a class="right carousel-control" href="#examCarousel" role="button" data-slide="next">
+    <span class="sr-only"></span>
+</a>

@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\mhenriqu\Downloads\ITD_WebApi</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="bin/ITD.WebApi.dll">
+      <publishTime>05/18/2016 08:31:57</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>03/31/2016 15:12:29</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="ClassDiagram1.cd">
+      <publishTime>03/21/2016 14:50:21</publishTime>
+    </File>
+    <File Include="Content/bootstrap-carousel.css">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Content/bootstrap-carousel.min.css">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css.map">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css.map">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css.map">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Content/ktc-screen.css">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Content/test-bg.jpg">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Models/KeonCenterModel.edmx.diagram">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.2.1.js">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.2.1.min.js">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.2.1.min.map">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.8.3.js">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Views/CheckIn/Index.cshtml">
+      <publishTime>05/17/2016 17:23:12</publishTime>
+    </File>
+    <File Include="Views/Home/Details.cshtml">
+      <publishTime>04/06/2016 10:06:23</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>05/12/2016 11:18:14</publishTime>
+    </File>
+    <File Include="Views/Screen/Index.cshtml">
+      <publishTime>04/06/2016 10:04:32</publishTime>
+    </File>
+    <File Include="Views/Screen/_CurrentExams.cshtml">
+      <publishTime>03/31/2016 18:22:07</publishTime>
+    </File>
+    <File Include="Views/Screen/_CurrentStats.cshtml">
+      <publishTime>04/06/2016 16:27:49</publishTime>
+    </File>
+    <File Include="Views/Screen/_Exams.cshtml">
+      <publishTime>03/24/2016 12:59:38</publishTime>
+    </File>
+    <File Include="Views/Screen/_Stats.cshtml">
+      <publishTime>03/24/2016 13:30:35</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>04/06/2016 10:04:04</publishTime>
+    </File>
+    <File Include="Views/Shared/_ScreenLayout.cshtml">
+      <publishTime>03/31/2016 18:17:22</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>03/31/2016 15:12:28</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/18/2016 08:31:57</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

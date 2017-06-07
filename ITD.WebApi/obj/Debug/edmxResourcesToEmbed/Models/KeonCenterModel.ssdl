@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KeonCenterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'cba_trc_01.dbo.vCurrent_Tests_ByCourse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vCurrent_Tests_ByCourse">
+    <Key>
+      <PropertyRef Name="Test_ID" />
+    </Key>
+    <Property Name="Course_Prefix" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Course_Number" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Professor" Type="varchar" MaxLength="102" Nullable="false" />
+    <Property Name="Test_Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Test_ID" Type="int" Nullable="false" />
+    <Property Name="Open_Date_Time" Type="datetime" Nullable="false" />
+    <Property Name="Close_Date_Time" Type="datetime" Nullable="false" />
+    <Property Name="Students_Enrolled" Type="int" Nullable="false" />
+    <Property Name="Tests_Taken" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'cba_trc_01.dbo.vCurrent_Tests_New' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityContainer Name="KeonCenterModelStoreContainer">
+    <EntitySet Name="vCurrent_Tests_ByCourse" EntityType="Self.vCurrent_Tests_ByCourse" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vCurrent_Tests_ByCourse].[Course_Prefix] AS [Course_Prefix], 
+    [vCurrent_Tests_ByCourse].[Course_Number] AS [Course_Number], 
+    [vCurrent_Tests_ByCourse].[Title] AS [Title], 
+    [vCurrent_Tests_ByCourse].[Professor] AS [Professor], 
+    [vCurrent_Tests_ByCourse].[Test_Name] AS [Test_Name], 
+    [vCurrent_Tests_ByCourse].[Test_ID] AS [Test_ID], 
+    [vCurrent_Tests_ByCourse].[Open_Date_Time] AS [Open_Date_Time], 
+    [vCurrent_Tests_ByCourse].[Close_Date_Time] AS [Close_Date_Time], 
+    [vCurrent_Tests_ByCourse].[Students_Enrolled] AS [Students_Enrolled], 
+    [vCurrent_Tests_ByCourse].[Tests_Taken] AS [Tests_Taken]
+    FROM [dbo].[vCurrent_Tests_ByCourse] AS [vCurrent_Tests_ByCourse]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

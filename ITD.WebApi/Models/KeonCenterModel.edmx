@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="KeonCenterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'cba_trc_01.dbo.vCurrent_Tests_ByCourse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vCurrent_Tests_ByCourse">
+          <Key>
+            <PropertyRef Name="Test_ID" />
+          </Key>
+          <Property Name="Course_Prefix" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Course_Number" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Professor" Type="varchar" MaxLength="102" Nullable="false" />
+          <Property Name="Test_Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Test_ID" Type="int" Nullable="false" />
+          <Property Name="Open_Date_Time" Type="datetime" Nullable="false" />
+          <Property Name="Close_Date_Time" Type="datetime" Nullable="false" />
+          <Property Name="Students_Enrolled" Type="int" Nullable="false" />
+          <Property Name="Tests_Taken" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'cba_trc_01.dbo.vCurrent_Tests_New' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityContainer Name="KeonCenterModelStoreContainer">
+          <EntitySet Name="vCurrent_Tests_ByCourse" EntityType="Self.vCurrent_Tests_ByCourse" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vCurrent_Tests_ByCourse].[Course_Prefix] AS [Course_Prefix], 
+    [vCurrent_Tests_ByCourse].[Course_Number] AS [Course_Number], 
+    [vCurrent_Tests_ByCourse].[Title] AS [Title], 
+    [vCurrent_Tests_ByCourse].[Professor] AS [Professor], 
+    [vCurrent_Tests_ByCourse].[Test_Name] AS [Test_Name], 
+    [vCurrent_Tests_ByCourse].[Test_ID] AS [Test_ID], 
+    [vCurrent_Tests_ByCourse].[Open_Date_Time] AS [Open_Date_Time], 
+    [vCurrent_Tests_ByCourse].[Close_Date_Time] AS [Close_Date_Time], 
+    [vCurrent_Tests_ByCourse].[Students_Enrolled] AS [Students_Enrolled], 
+    [vCurrent_Tests_ByCourse].[Tests_Taken] AS [Tests_Taken]
+    FROM [dbo].[vCurrent_Tests_ByCourse] AS [vCurrent_Tests_ByCourse]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KeonCenterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="KeonCenterContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CurrentTests" EntityType="KeonCenterModel.CurrentTests" />
+        </EntityContainer>
+        <EntityType Name="CurrentTests">
+          <Key>
+            <PropertyRef Name="TestID" />
+          </Key>
+          <Property Name="TestID" Type="Int32" Nullable="false" />
+          <Property Name="CoursePrefix" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CourseNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CourseTitle" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Professor" Type="String" Nullable="false" MaxLength="102" FixedLength="false" Unicode="false" />
+          <Property Name="CourseTest" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TestOpens" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TestCloses" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StudentsEnrolled" Type="Int32" Nullable="false" />
+          <Property Name="TestsTaken" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KeonCenterModelStoreContainer" CdmEntityContainer="KeonCenterContext">
+          <EntitySetMapping Name="CurrentTests">
+            <EntityTypeMapping TypeName="KeonCenterModel.CurrentTests">
+              <MappingFragment StoreEntitySet="vCurrent_Tests_ByCourse">
+                <ScalarProperty Name="TestsTaken" ColumnName="Tests_Taken" />
+                <ScalarProperty Name="StudentsEnrolled" ColumnName="Students_Enrolled" />
+                <ScalarProperty Name="TestCloses" ColumnName="Close_Date_Time" />
+                <ScalarProperty Name="TestOpens" ColumnName="Open_Date_Time" />
+                <ScalarProperty Name="TestID" ColumnName="Test_ID" />
+                <ScalarProperty Name="CourseTest" ColumnName="Test_Name" />
+                <ScalarProperty Name="Professor" ColumnName="Professor" />
+                <ScalarProperty Name="CourseTitle" ColumnName="Title" />
+                <ScalarProperty Name="CourseNumber" ColumnName="Course_Number" />
+                <ScalarProperty Name="CoursePrefix" ColumnName="Course_Prefix" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

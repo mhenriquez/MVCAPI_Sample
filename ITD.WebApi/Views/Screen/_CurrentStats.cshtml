@@ -1,0 +1,47 @@
+﻿@model IEnumerable<string>
+
+@helper formatCount(string seats)
+{
+    var count = Convert.ToInt32(seats);
+    var color = "green";
+    if (count < 20)
+    {
+        color = "red";
+    }
+    <span style="color:@color">@string.Format("{0}", count)</span>
+}
+
+<div class="row">
+    <div class="col-lg-4 text-center"></div>
+    <div class="col-lg-4 text-center"></div>
+    <div class="col-lg-4 text-center"></div>
+    <br />
+</div>
+
+<div class="row stat-row">
+    <div class="col-lg-4 text-center">
+        <h3>TESTS ENDING</h3>
+        <h4>Today</h4>
+        <p class="stat-count">@ViewData["ClosingToday"]</p>
+    </div>
+    <div class="col-lg-4 text-center">
+        <h3>&nbsp;</h3>
+        <h4>Seats Available</h4>
+        <p class="stat-count">@formatCount(@ViewData["SeatsAvailable"].ToString())</p>
+    </div>
+    <div class="col-lg-4 text-center">
+        <h3>TESTS REMAINING</h3>
+        <h4>Week</h4>
+        @if (DateTime.Now.DayOfWeek != DayOfWeek.Saturday)
+        {  
+            <p class="stat-count">@ViewData["ClosingWeek"]</p>
+        }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <p>&nbsp;</p>
+        <p class="text-center">Information is updated every 2 minutes. Last updated: <span id="current">@DateTime.Now.ToShortDateString() at @DateTime.Now.ToShortTimeString()</span></p>
+    </div>
+</div>

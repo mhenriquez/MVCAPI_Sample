@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ITD.WebApi.Models.CurrentTests>
+
+@{
+    ViewBag.Title = "- Current Exams";
+}
+
+<h3>Current Tests</h3>
+<div class="table-responsive">
+    <table class="table table-striped table-condensed">
+        <tr>
+            <th>
+                Course Number
+            </th>
+            <th>
+                Course Title
+            </th>
+            <th>
+                Course Section(s)
+            </th>
+            <th>
+                Professor
+            </th>
+            <th>
+                Test Name
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CoursePrefix) - @Html.DisplayFor(modelItem => item.CourseNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CourseTitle)
+                </td>
+                <td>
+                    @for (int i = 0; i < item.Sections.Count; i++)
+                    {
+                        if (i == (item.Sections.Count - 1))
+                        {
+                            @item.Sections[i]
+                        }
+                        else
+                        {
+                            @(item.Sections[i] + ", ")
+                        }
+                    }
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Professor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CourseTest)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.TestID })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
